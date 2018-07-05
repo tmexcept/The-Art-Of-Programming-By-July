@@ -28,7 +28,7 @@ def left_shift_one(s, i, j):
         j : 索引位置j
     '''
     t = s[i]
-    for k in xrange(i, j - 1):
+    for k in range(i, j - 1):
         s[k] = s[k + 1]
     s[j - 1] = t
 
@@ -64,7 +64,7 @@ def left_shift(s, m):
         raise Exception('m is less than 0')
     else:
         m = m % len(s)
-    for i in xrange(m):
+    for i in range(m):
         left_shift_one(s, 0, len(s))
 
 ##########################################################################
@@ -83,7 +83,9 @@ def invert(s, start, end):
         end : 翻转的结束位置(包含)
     '''
     n = end - start + 1
-    for i in xrange(n / 2):
+    print("range = ", n)
+    print("%s,  %s "%(n, range(int(n / 2))))
+    for i in range(int(n / 2)):
         s[start + i], s[end - i] = s[end - i], s[start +i]
 
 
@@ -110,10 +112,10 @@ if __name__ == '__main__':
     simple_shift(a0_1, 3)
     simple_shift(a0_2, 3)
     simple_shift(a0_3, 3)
-    print 'simple_shift:'
-    print a0_1
-    print a0_2
-    print a0_3
+    print('simple_shift:')
+    print(a0_1)
+    print(a0_2)
+    print(a0_3)
     print
 
     a1_1 = copy.copy(a1)
@@ -122,10 +124,10 @@ if __name__ == '__main__':
     left_shift(a1_1, 3)
     left_shift(a1_2, 3)
     left_shift(a1_3, 3)
-    print 'left_shift:'
-    print a1_1
-    print a1_2
-    print a1_3
+    print('left_shift:')
+    print(a1_1)
+    print(a1_2)
+    print(a1_3)
     print
 
     a2_1 = copy.copy(a1)
@@ -134,8 +136,8 @@ if __name__ == '__main__':
     invert_solution(a2_1, 3)
     invert_solution(a2_2, 3)
     invert_solution(a2_3, 3)
-    print 'invert_solution:'
-    print a2_1
-    print a2_2
-    print a2_3
+    print('invert_solution:')
+    print(a2_1)
+    print(a2_2)
+    print(a2_3)
     print
